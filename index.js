@@ -8,15 +8,18 @@ class ContaCorrente {
     #saldo = 0;
 
     sacar(valor){
-        if(this.saldo >= valor){
-            this.saldo -= valor;
-        }
+        if(this.saldo <= valor)
+            return;
+
+        this.saldo -= valor;
+        return valor;
     }
 
     depositar(valor){
-        if(this.#saldo > 0 ){
-            this.#saldo += valor;
-        }
+        if(this.#saldo < 0 )
+            return;
+
+        this.#saldo += valor;
     }
 }
 
@@ -31,6 +34,6 @@ cliente2.cpf = 88822233309;
 const contaCorrenteDoRicardo = new ContaCorrente();
 contaCorrenteDoRicardo.agencia = 1001
 contaCorrenteDoRicardo.saldo = 1000;
-contaCorrenteDoRicardo.depositar(100)
-
-console.log(contaCorrenteDoRicardo);
+contaCorrenteDoRicardo.depositar(115)
+const valorSacado = contaCorrenteDoRicardo.sacar(45);
+console.log(valorSacado);
