@@ -21,3 +21,5 @@ conta2.agencia = 102;
 
 contaCorrenteDoRicardo.transferir(10, conta2);
 console.log(conta2);
+console.log(conta2.cliente);
+console.log(conta2.saldo);
